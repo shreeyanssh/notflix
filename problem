@@ -1,0 +1,8 @@
+1.When using overflow in any div causes the react 
+2.Margin and padding causing problem.
+3.In cards we are sending data and title because for may cards the data.media_type is not defined by the api and in that case to make it clickable we need a media type which we can pass by sending movie, tv or people for of them respectivily or send category when inside popular or trending.
+4.While using   const { pathname } = useLocation();
+pathname is right and not pathName as its a property name use pathname.
+5.This is the right syntax import ReactPlayer from "react-player";
+don't write { ReactPlayer } .
+6.Can't put a link inside a link or an a tag inside an a tag.

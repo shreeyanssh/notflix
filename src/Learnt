@@ -1,0 +1,31 @@
+1. How to make a top nav with search feature.
+
+2. background: `linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5),rgba(0,0,0,.8)), url(https://image.tmdb.org/t/p/original/${
+      data.backdrop_path || data.poster_path || data.profile_path
+    })`,
+   (this gives a darker shade in the bottom of the image.)
+
+3. shadow-[8px_17px_38px_2px_rgba(0,0,0,.5) hover:shadow-[8px_17px_38px_2px_rgba(0,0,0,.9)
+
+shadow effect
+
+4. React infinte scroll:-
+
+step1: import InfiniteScroll from "react-infinite-scroll-component";
+
+step2:
+  <InfiniteScroll
+  dataLength={trending.length}
+  next={GetTrending}
+  hasMore = {hasMore}                
+  loader={<h1>Loading...</h1>} >
+         <Cards data={trending} title={""} />
+  </InfiniteScroll>
+
+surround the component that you want to put the infinite scroll on and then pass the values for dataLength(i.e. length of data you want to check) next(what to do when more data is needed) hasMore(a boolean useState that returns false when the data.result.length)loader(i.e. what to show when data is not laoding.)
+
+step3: make useStates page and hasMore and in getTrending put if else statement to check if the data.result.length is more than 0. if yes setTrending with a function that stores prev values and saves new one as well set page+1 this will load new pages and infinite scroll will show them make sure to not use overflow-auto on div where infinite scroll is used.
+
+step4: make a refresh handler to set page 1 and show result when category and duration are changed from dropdown.
+
+5.
